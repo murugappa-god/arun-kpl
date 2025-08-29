@@ -1,102 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio - Home</title>
-  <link rel="stylesheet" href="project.css">
+    <meta charset="UTF-8">
+    <title>Kabilan's Personal Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; padding: 0; 
+            background: #f0f0f0; /* light gray full background */
+            scroll-behavior: smooth; 
+            color: #222; 
+        }
+
+        /* Header */
+        header { 
+            background: #1CA150; 
+            color: #fff; 
+            padding: 40px 0; 
+            text-align: center; 
+        }
+
+        /* Navigation bar */
+        nav {
+            background: #138d3a;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content container */
+        .container { 
+            width: 90%; 
+            max-width: 900px; 
+            margin: 30px auto; 
+            padding: 24px; 
+            border-radius: 10px;
+            background: #e6e6e6; /* light gray section container */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-photo { 
+            width: 180px; height: 180px; 
+            border-radius: 50%; 
+            border: 5px solid #1CA150; 
+            object-fit: cover; 
+            display: block; 
+            margin: 0 auto 24px auto; 
+        }
+
+        .details, .certificates, .contact { 
+            background: #fff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 30px; 
+        }
+
+        .details-list { list-style: none; padding: 0; }
+        .details-list li { margin-bottom: 10px; font-size: 18px; }
+        h2 { color: #1CA150; font-size: 28px; }
+
+        /* Certificates */
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .certificates img { 
+            width: 100%; 
+            border-radius: 8px; 
+            border: 2px solid #ccc; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .certificates img:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2); 
+        }
+
+        /* Forms */
+        form { display: flex; flex-direction: column; gap: 12px; }
+        input, textarea { 
+            padding: 10px; 
+            font-size: 16px; 
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+        }
+        button { 
+            background: #1CA150; 
+            color: #fff; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 4px; 
+            font-size: 18px; 
+            cursor: pointer; 
+        }
+        button:hover { background: #138d3a; }
+
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            background: #1CA150; 
+            color: #fff; 
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 10px; }
+            nav a { display: inline-block; margin: 10px; }
+        }
+    </style>
 </head>
 <body>
-  <div id="SectionHome">
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navigation">
-      <a class="navbar-brand" href="#">My Portfolio</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#SectionHome">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#SectionCirtificate">Cirtificate</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#SectionResume">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li></nav>
-<div class="home">
- <h1 class="name">Arun Murugasan</h1>
-  <p class="intro">B.Tech Artificial intelligence and data science </br> At MAM SCHOOL OF INGINEERING</p>
-  
-  </div>
-  <div id="about"></div>
-  <!-- About Section -->
-  <section class="about d-flex flex-column ">
-    <h2>About Me</h2>
-    <a href="https://ibb.co/0yMf0gCQ"><img src="https://i.ibb.co/gZTD05S6/IMG-20250125-165528-515.webp" alt="IMG-20250125-165528-515" border="0" /></a></br>
-    <div>
-      
-      <ul>
-        <li><strong>Name:</strong> Arun.M</li>
-        <li><strong>Age:</strong>19</li>
-        <li><strong>Date of birth:</strong> 20/10/2005</li>
-        <li><strong>Skills:</strong>HTML,CSS,JavaScript,SQL</li>
-      </ul>
 
-    </div>
-  </section>
+<header>
+    <h1>Kabilan Arunakiri.s</h1>
+    <p>B.Tech in Artificial Intelligence and Data Science<br>AT MAM School of Engineering</p>
+</header>
 
-<div id="SectionCirtificate ">
-  <div class="cirtificate">
-  <h1>My Cirtificates</h1>
-  <div class="cirtificate">
-    <h2 class="cirtificate-title">Cirtificate</h2>
-    <div class="cirtificate-list">
-      <div class="cirtificate-item">
-<a href="https://ibb.co/rGG0r1rb"><img src="https://i.ibb.co/fYYFwPw8/Screenshot-20240611-201104-Chrome.png" alt="Screenshot-20240611-201104-Chrome" border="0" /></a> 
- <h3 class="cirtificate-name">AWS Mega workshop</h3>
-      </div>
-      <div class="cirtificate-item">
-<a href="https://ibb.co/v7yJGGm"><img src="https://i.ibb.co/8Wvjpp2/IMG-20240703-WA0006.jpg" alt="IMG-20240703-WA0006" border="0" /></a>       
- <h3 class="cirtificate-name">Digilabs</h3>
-      </div>
-      <div class="cirtificate-item">
-<a href="https://ibb.co/Kc2cRPK6"><img src="https://i.ibb.co/bjsjq0b1/Screenshot-20241127-160909-Microsoft-365-Office.png" alt="Screenshot-20241127-160909-Microsoft-365-Office" border="0" /></a>        
-<h3 class="cirtificate-name">MangoDB</h3>
-      </div>
-      <div class="cirtificate-item">
-<a href="https://ibb.co/Pv3WFpqZ"><img src="https://i.ibb.co/wF3QBH5N/Screenshot-20250114-100023-Microsoft-365-Office.png" alt="Screenshot-20250114-100023-Microsoft-365-Office" border="0" /></a>        
-      </div>
-    </div>
+<!-- Navigation -->
+<nav>
+    <a href="#details">About</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+    <img src="profile photo.jpg" alt="Kabilan Photo" class="profile-photo" />
+
+    <section class="details" id="details">
+        <h2>About Me</h2>
+        <ul class="details-list">
+            <li><strong>Name:</strong> Kabilan</li>
+            <li><strong>Birthday:</strong> 23-10-2005</li>
+            <li><strong>Education:</strong> B.Tech-AI&DS</li>
+            <li><strong>Address:</strong> Pattukkottai, Thanjavur, India</li>
+            <li><strong>Phone:</strong> 8072964523</li>
+            <li><strong>Email:</strong> akabilan342@gmail.com</li>
+        </ul>
+    </section>
+
+    <section class="certificates" id="certificates">
+        <h2>My Certificates</h2>
+        <img src="MongoDB Certificate 1.jpg" alt="MongoDB Certificate 1" />
+        <img src="MongoDB Certificate 2.jpg" alt="MongoDB Certificate 2" />
+        <img src="Celonis Certificate.jpg" alt="Celonis Certificate" />
+        <img src="oracle.png" alt="oracle">
+        <img src="c programing.jpg" alt="c programing">
+        <img src="programing technique.jpg" alt="programing technique">
+        <img src="office automation.jpg" alt="office automation">
+        <img src="chess.jpg" alt="chess participate">
+        <img src="periyar.jpg" alt="event participate">
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:akabilan342@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Mail</button>
+        </form>
+    </section>
 </div>
 
-<div id="SectionResume" class="resume">
-  <h1>My Resume</h1>
-  <a href="https://ibb.co/rKNJt1RD"><img src="https://i.ibb.co/MyQLh3xF/IMG-20250824-WA0004.jpg" alt="IMG-20250824-WA0004" border="0"></a>
+<!-- Footer -->
+<footer>
+    © 2025 Kabilan Arunakiri | Tiruchirappalli, India
+</footer>
 
-</div>
-</div>
-
-<div id="contact">
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:aids2023.arunm@gmail.com">
-      aids2023.arunm@email.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/arun-m-undefined-263a3b2b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">My LinkedIn</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">My GitHub</a></p>
-  </section>
-  </div>
-</div>
 </body>
 </html>
